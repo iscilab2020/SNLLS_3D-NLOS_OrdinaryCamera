@@ -6,7 +6,7 @@
 
 If you use our codes or paper in your research, please cite the
 ```
-@InProceedings{Park_2019_CVPR,
+@InProceedings{Fadlullah_2024_ICASSP,
 author = {Fadlullah Raji and John, Murray-Bruce},
 }
 ```

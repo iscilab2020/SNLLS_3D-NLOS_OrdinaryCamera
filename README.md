@@ -7,6 +7,6 @@
 If you use our codes or paper in your research, please cite this
 ```
 @InProceedings{Fadlullah_2024_ICASSP,
-author = {Fadlullah Raji and John, Murray-Bruce},
+author = {Fadlullah, Raji and John, Murray-Bruce},
 }
 ```

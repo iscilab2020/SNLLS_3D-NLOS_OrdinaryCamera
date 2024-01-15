@@ -76,6 +76,12 @@ Reconstruct Real World NLOS from captured 2D using the Alternating Minimization 
 ```bash
 python3 test_real_world.py
 ```
+Use Saunder's et al.'s reconstruction method to search location and reconstruct the scene using a known shape of the occluder
+```bash
+python3 grid_search.py
+```
+
+
 
 
 

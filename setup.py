@@ -23,7 +23,6 @@ setup(
         "scipy",
         "numpy",
         "ipython",
-        "accelerate",
         "einops",
         "scikit-learn",
         "h5py",

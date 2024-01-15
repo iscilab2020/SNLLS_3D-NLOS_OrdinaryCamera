@@ -29,5 +29,31 @@ If you use our codes or paper in your research, please cite this
 author = {Fadlullah, Raji and John, Murray-Bruce},
 }
 ```
+## Getting Started
 
-To run our Results
+To run our results, follow these steps:
+
+### Cloning the Repository
+
+First, you need to clone the repository to your local machine. Open your terminal and run the following command:
+
+```bash
+git clone git@github.com:iscilab2020/SNLLS_3D-NLOS_OrdinaryCamera.git
+```
+Navigate to the cloned directory:
+
+```bash
+cd SNLLS_3D-NLOS_OrdinaryCamera
+```
+
+Create a Conda environment for the project:
+
+```bash
+conda create -n SNLLS python=3.8  # Replace with the required Python version
+conda activate SNLLS
+```
+Install the software and the required dependencies:
+```bash
+pip install -e . 
+```
+

@@ -81,7 +81,7 @@ def main():
         fig.savefig(filename)
         plt.close(fig)
             
-    with imageio.get_writer("./results/real_results.gif", mode='I', fps=20) as writer:  # Adjust fps as needed
+    with imageio.get_writer("./results/real_results.gif", mode='I', fps=20, loop=0) as writer:  # Adjust fps as needed
         for filename in filenames:
             image = imageio.imread(filename)
             writer.append_data(image)

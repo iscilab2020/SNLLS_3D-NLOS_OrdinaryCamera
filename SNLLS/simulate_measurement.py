@@ -17,7 +17,7 @@ B = Pinspeck(camX_len=[0.808, 1.747], camZ_len=[0.05, 0.05+0.939], camDepth= 1.0
                     camPixels=M, sceneX_len=[0, .708], sceneZ_len=[0.03, 0.436], occluders=None,
                     multiprocess=0, point_window=2, device=device, precision=32, cube = True, num_points=[10, 3,10])
 
-r = torch.load("/Users/fadlullahraji/Desktop/SNLLS_3D-NLOS_OrdinaryCamera/SNLLS/data/real_reconstructed_data.pt")
+r = torch.load("/Users/fadlullahraji/Desktop/SNLLS_3D-NLOS_OrdinaryCamera/SNLLS/results/real_reconstructed_data.pt")
 
 ss = torch.sigmoid(r["occ"])>0.5
 ss = [ i for i, j in enumerate(ss) if j ]
@@ -45,7 +45,7 @@ for angle in range(0, 360, 2):  # Adjust the step for a smoother or faster rotat
     fig.savefig(filename)
     plt.close(fig)
 
-with imageio.get_writer("rotation_video.gif", mode='I', fps=20) as writer:  # Adjust fps as needed
+with imageio.get_writer("./results/real_results.gif", mode='I', fps=20, loop=0) as writer:  # Adjust fps as needed
     for filename in filenames:
         image = imageio.imread(filename)
         writer.append_data(image)

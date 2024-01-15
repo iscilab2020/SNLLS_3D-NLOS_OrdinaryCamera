@@ -1,4 +1,4 @@
-from SNLLS.world_model import *
+from SNLLS.model.world_model import *
 import matplotlib.pyplot as plt
 # import cv2
 

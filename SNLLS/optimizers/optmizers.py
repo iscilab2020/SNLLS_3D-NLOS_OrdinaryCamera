@@ -5,10 +5,10 @@ from torch.optim.lr_scheduler import StepLR
 from torch.optim.lr_scheduler import OneCycleLR
 from torch.optim.lr_scheduler import CosineAnnealingLR
 import numpy as np
-from SNLLS.world_model import *
+from SNLLS.model.world_model import *
 
 # Modify Saunders et al. Grid Search Methods to use Heuristics of the Bounding Box
-def huristic_localization(B, m, possible_locations, mesh, optimizer="cgd", num_line=5):
+def huristic_localization(B, m, mesh, optimizer="cgd", num_line=5):
     
     def get_ratio(point0):
         mesh_min = point0.min(0) #torch.min(point0, axis=0)

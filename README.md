@@ -84,6 +84,40 @@ Use Saunder's et al.'s reconstruction method to search location and reconstruct 
 ```bash
 python3 grid_search.py
 ```
+We offer a comprehensive library designed to simulate the forward model for an arbitrary Non-Line-of-Sight (NLOS) setup. This library is an essential tool for researchers exploring NLOS configurations. It employs ray tracing techniques to simulate both the forward model and the shadowing effects caused by occluders. You can find the library in the following directory:
+```bash
+SNLLS/model/world_model
+```
+## Simulating the Forward Model
+
+To simulate the forward model, use the following code snippet. This example demonstrates the setup on a CUDA-enabled device if available, falling back to CPU otherwise
+```python
+device = "cuda" if torch.cuda.is_available() else "cpu"
+
+B = Forward_Model(camX_len=[0.808, 1.747], camZ_len=[0.05, 0.05+0.939], camDepth= 1.076, sceneDepth=0, scenePixels=32, 
+                    camPixels=128, sceneX_len=[0, .708], sceneZ_len=[0.03, 0.436], occluders=None,
+                    multiprocess=0, point_window=2, device=device, precision=32)
+```
+In this setup:
+
+- The hidden scene plane is a 32x32 grid.
+- The measurement plane is 128x128.
+- `camDepth` specifies the depth from the hidden scene to the measurement plane.
+- `camX_len` and `camZ_len` define the size of the camera's field of view.
+- `sceneX_len` and `sceneZ_len` determine the dimensions of the hidden scene plane.
+
+## Simulating the Pinspeck Forward Model
+
+To replicate the Pinspeck forward model as described in our paper, use the following configuration
+```python
+device = "cuda" if torch.cuda.is_available() else "cpu"
+
+B = Pinspeck(camX_len=[0.808, 1.747], camZ_len=[0.05, 0.05+0.939], camDepth= 1.076, sceneDepth=0, scenePixels=32, 
+                    camPixels=128, sceneX_len=[0, .708], sceneZ_len=[0.03, 0.436], occluders=None,
+                    multiprocess=0, point_window=2, device=device, precision=32, cube = True, num_points=[10, 3,10])
+```
+This configuration includes an additional parameter `cube` and `num_points`, enabling computation of the occluder space. `cube` either uses a voxel based voxelization of the occluder grid or a point based voxelization when set to False
+
 
 
 

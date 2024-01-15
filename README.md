@@ -95,8 +95,8 @@ To simulate the forward model, use the following code snippet. This example demo
 ```python
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-B = Forward_Model(camX_len=[0.808, 1.747], camZ_len=[0.05, 0.05+0.939], camDepth= 1.076, sceneDepth=0, scenePixels=32, 
-                    camPixels=128, sceneX_len=[0, .708], sceneZ_len=[0.03, 0.436], occluders=None,
+B = Forward_Model(camX_len=[0.808, 1.747], camZ_len=[0.05, 0.05+0.939], camDepth= 1.076, sceneDepth=0, scenePixels=(32, 32), 
+                    camPixels=(128, 128), sceneX_len=[0, .708], sceneZ_len=[0.03, 0.436], occluders=None,
                     multiprocess=0, point_window=2, device=device, precision=32)
 ```
 In this setup:
@@ -113,12 +113,12 @@ To replicate the Pinspeck forward model as described in our paper, use the follo
 ```python
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-B = Pinspeck(camX_len=[0.808, 1.747], camZ_len=[0.05, 0.05+0.939], camDepth= 1.076, sceneDepth=0, scenePixels=32, 
-                    camPixels=128, sceneX_len=[0, .708], sceneZ_len=[0.03, 0.436], occluders=None,
+B = Pinspeck(camX_len=[0.808, 1.747], camZ_len=[0.05, 0.05+0.939], camDepth= 1.076, sceneDepth=0, scenePixels=(32, 32), 
+                    camPixels=(128, 128), sceneX_len=[0, .708], sceneZ_len=[0.03, 0.436], occluders=None,
                     multiprocess=0, point_window=2, device=device, precision=32, cube = True, num_points=[10, 3,10])
 ```
-This configuration includes an additional parameter `cube` and `num_points`, enabling computation of the occluder space. `cube` either uses a voxel based voxelization of the occluder grid or a point based voxelization when set to False
-
+This configuration includes an additional parameter `cube` and `num_points`, enabling computation of the occluder space. `cube` either uses a voxel based voxelization of the occluder grid or a point based voxelization when set to False. and `num_points` is the size of the voxels along dimensions `x, y, and z`
+ 
 
 
 

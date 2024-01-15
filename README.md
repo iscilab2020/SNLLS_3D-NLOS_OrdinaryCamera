@@ -62,7 +62,7 @@ cd SNLLS
 ```
 Simulate and Reconstruct using the Lifting Method:
 ```bash
-python3 test_lifing_method.py
+python3 test_lifting_method.py
 ```
 Simulate and Reconstruct using the Alternating Minimization Method I:
 ```bash
@@ -76,7 +76,7 @@ Reconstruct Real World NLOS from captured 2D image using the Alternating Minimiz
 ```bash
 python3 test_real_world.py
 ```
-You may combine the results to create Figure 1 in the paper :
+You may combine the results to create Figure 4 in the paper :
 ```bash
 python3 combined_results.py
 ```

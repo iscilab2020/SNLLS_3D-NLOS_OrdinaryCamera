@@ -21,7 +21,7 @@ def main():
     parser.add_argument("--path_to_scene", type=str, default="./data/smile.jpg")
     parser.add_argument("--snr", type=int, default=30)
     parser.add_argument("--max_iteration", type=int, default=500000)
-    parser.add_argument("--path_to_save", type=str, default="./results/ADM_Estimated_1.jpg")
+    parser.add_argument("--path_to_save", type=str, default="./results/AMA_Estimated_1.jpg")
     
     
     args = parser.parse_args()

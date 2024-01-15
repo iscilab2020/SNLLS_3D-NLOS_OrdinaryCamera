@@ -66,11 +66,11 @@ python3 test_lifing_method.py
 ```
 Simulate and Reconstruct using the Alternating Minimization Method I:
 ```bash
-python3 test_ADM_1.py
+python3 test_AMA_1.py
 ```
 Simulate and Reconstruct using the Alternating Minimization Method II:
 ```bash
-python3 test_ADM_2.py
+python3 test_AMA_2.py
 ```
 Reconstruct Real World NLOS from captured 2D image using the Alternating Minimization Method II:
 ```bash

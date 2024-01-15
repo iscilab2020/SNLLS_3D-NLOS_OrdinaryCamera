@@ -30,7 +30,7 @@ def main():
     # for p in processes:
     #     p.wait()
 
-    saved_fig = ["./results/Estimated_Kronecker.jpg", "./results/ADG.jpg",  "./results/Split_Estimated.jpg",  "./results/Real_Recons.jpg",]
+    saved_fig = ["./results/Estimated_Kronecker.jpg", "./results/AMA_Estimated_1.jpg",  "./results/AMA_Estimated_2.jpg",  "./results/Real_Recons.jpg",]
     names = ["Lifting Method", "Alternating Minimization Method", "Alternating Minimization Method with Split, b", "Real Reconstruction Results"]
 
     plt.figure(figsize=(10, len(saved_fig) * 5))

@@ -84,6 +84,7 @@ Use Saunder's et al.'s reconstruction method to search location and reconstruct 
 ```bash
 python3 grid_search.py
 ```
+## NLOS Forward Model
 We offer a comprehensive library designed to simulate the forward model for an arbitrary Non-Line-of-Sight (NLOS) setup. This library is an essential tool for researchers exploring NLOS configurations. It employs ray tracing techniques to simulate both the forward model and the shadowing effects caused by occluders. You can find the library in the following directory:
 ```bash
 SNLLS/model/world_model

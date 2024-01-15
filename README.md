@@ -72,9 +72,13 @@ Simulate and Reconstruct using the Alternating Minimization Method II:
 ```bash
 python3 test_ADM_2.py
 ```
-Reconstruct Real World NLOS from captured 2D using the Alternating Minimization Method II:
+Reconstruct Real World NLOS from captured 2D image using the Alternating Minimization Method II:
 ```bash
 python3 test_real_world.py
+```
+You may combine the results to create Figure 1 in the paper :
+```bash
+python3 combined_results.py
 ```
 Use Saunder's et al.'s reconstruction method to search location and reconstruct the scene using a known shape of the occluder
 ```bash

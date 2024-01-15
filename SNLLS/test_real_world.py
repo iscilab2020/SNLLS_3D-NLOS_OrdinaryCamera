@@ -5,6 +5,8 @@ from PIL import Image
 import random
 import argparse
 from scipy.io import loadmat
+import os
+import imageio.v2 as imageio
 
 
 
@@ -66,6 +68,28 @@ def main():
     ax = fig.add_subplot(111, projection='3d')
     
     environment_fig(B, occ=ss, measurement=m, ax=ax, Title="Estimated Occluder and Scene", scene=final_scene, save_fig=args.path_to_save)
+    
+    filenames = []
+    for angle in range(0, 360, 2):  # Adjust the step for a smoother or faster rotation
+        filename = f'./results/frame_{angle}.png'
+        if os.path.exists(filename):
+            filenames.append(filename)
+            continue
+
+        ax.view_init(30, angle)
+        filenames.append(filename)
+        fig.savefig(filename)
+        plt.close(fig)
+            
+    with imageio.get_writer("./results/real_results.gif", mode='I', fps=20) as writer:  # Adjust fps as needed
+        for filename in filenames:
+            image = imageio.imread(filename)
+            writer.append_data(image)
+
+    # Remove the individual frame files
+    import os
+    for filename in filenames:
+        os.remove(filename)
     
 
 

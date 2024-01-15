@@ -18,7 +18,7 @@ def main():
     parser.add_argument('--N', type=int, default=32)
     parser.add_argument("--num_points", type=int, default=10)
     parser.add_argument("--split_learning", type=int, default=0)
-    parser.add_argument("--path_to_scene", type=str, default="./data/smile.png")
+    parser.add_argument("--path_to_scene", type=str, default="./data/smile.jpg")
     parser.add_argument("--snr", type=int, default=30)
     parser.add_argument("--max_iteration", type=int, default=500000)
     parser.add_argument("--path_to_save", type=str, default="./results/ADM_Estimated_1.jpg")
@@ -48,7 +48,7 @@ def main():
 
 
     
-    cs = np.array([ 12, 13, 14, 15, 16, 17, 18, 19, 25, 35, 45, 56, 57, 58,59, 55, 54,53,  52, 51 ])
+    cs = np.array([ 12, 13, 14, 15, 16, 17, 18, 19, 25, 35, 45, 56, 57, 58, 59, 55, 54,53,  52, 51 ])
 
 
     mode = B.GetPinspeckModel(cs, pinhole=False, return_vis=0)

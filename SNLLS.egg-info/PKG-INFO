@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: SNLLS
+Version: 0.0.0
+Author: ISCI Lab
+Requires-Dist: filelock
+Requires-Dist: Pillow
+Requires-Dist: torch
+Requires-Dist: fire
+Requires-Dist: humanize
+Requires-Dist: requests
+Requires-Dist: tqdm
+Requires-Dist: matplotlib
+Requires-Dist: scikit-image
+Requires-Dist: scipy
+Requires-Dist: numpy
+Requires-Dist: ipython
+Requires-Dist: accelerate
+Requires-Dist: einops
+Requires-Dist: scikit-learn
+Requires-Dist: h5py
+Requires-Dist: pandas
+Requires-Dist: open3d

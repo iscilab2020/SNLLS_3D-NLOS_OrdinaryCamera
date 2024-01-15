@@ -17,7 +17,7 @@ def main():
     parser.add_argument('--N', type=int, default=32)
     parser.add_argument("--num_points", type=int, default=10)
     parser.add_argument("--split_learning", type=int, default=1)
-    parser.add_argument("--path_to_scene", type=str, default="./data/smile.png")
+    parser.add_argument("--path_to_scene", type=str, default="./data/smile.jpg")
     parser.add_argument("--snr", type=int, default=30)
     parser.add_argument("--max_iteration", type=int, default=500000)
     parser.add_argument("--path_to_save", type=str, default="./results/ADM_Estimated_2.jpg")

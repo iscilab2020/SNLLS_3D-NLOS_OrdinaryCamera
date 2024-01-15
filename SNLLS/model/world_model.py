@@ -659,7 +659,7 @@ class Forward_Model(nn.Module):
         vis = []
 
         
-        occluder_scene = o3d.t.geometry.RaycastingScene(nthreads=10)
+        occluder_scene = o3d.t.geometry.RaycastingScene(nthreads=1)
         cubes = o3d.t.geometry.TriangleMesh.from_legacy(scene)
         
         cube_id = occluder_scene.add_triangles(cubes)

@@ -1,6 +1,6 @@
 from SNLLS.model.world_model import *
 from SNLLS.utils.utils import save_cs_plot, environment_fig
-from optimizers import GradientDescentJointREcovery, LiftingRecovery
+from SNLLS.optimizers.optmizers import GradientDescentJointREcovery, LiftingRecovery
 from utils import environment_fig
 import random
 from PIL import Image
@@ -34,7 +34,7 @@ def main():
     x[:, 7:9, 0:5, :3] = 1.
 
 
-    img = Image.open("./data/smile.png")
+    img = Image.open("./data/smile.jpg")
     img_resized = img.resize(N)
 
     # Convert the image to a NumPy array

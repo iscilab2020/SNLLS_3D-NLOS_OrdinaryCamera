@@ -22,7 +22,7 @@ r = torch.load("/Users/fadlullahraji/Desktop/SNLLS_3D-NLOS_OrdinaryCamera/SNLLS/
 ss = torch.sigmoid(r["occ"])>0.5
 ss = [ i for i, j in enumerate(ss) if j ]
 
-fig = plt.figure(figsize=(15, 15))
+fig = plt.figure(figsize=(10, 10))
 ax = fig.add_subplot(111, projection='3d')
 
 m = torch.Tensor(loadmat("./data/real.mat")["measurement"])

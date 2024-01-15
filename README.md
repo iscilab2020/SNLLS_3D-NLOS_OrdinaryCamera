@@ -56,4 +56,26 @@ Install the software and the required dependencies:
 ```bash
 pip install -e . 
 ```
+Navigate into the Software:
+```bash
+cd SNLLS
+```
+Simulate and Reconstruct using the Lifting Method:
+```bash
+python3 test_lifing_method.py
+```
+Simulate and Reconstruct using the Alternating Minimization Method I:
+```bash
+python3 test_ADM_1.py
+```
+Simulate and Reconstruct using the Alternating Minimization Method II:
+```bash
+python3 test_ADM_2.py
+```
+Reconstruct Real World NLOS from captured 2D using the Alternating Minimization Method II:
+```bash
+python3 test_real_world.py
+```
+
+
 

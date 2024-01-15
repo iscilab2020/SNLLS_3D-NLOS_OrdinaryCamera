@@ -29,6 +29,8 @@ setup(
         "pandas",
         "open3d",
         "trimesh",
+        "imageio",
+        "ffmpeg"
     ],
     author="ISCI Lab",
 )

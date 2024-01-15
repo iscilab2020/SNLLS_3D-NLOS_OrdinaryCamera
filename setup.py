@@ -28,7 +28,8 @@ setup(
         "scikit-learn",
         "h5py",
         "pandas",
-        "open3d"
+        "open3d",
+        "trimesh",
     ],
     author="ISCI Lab",
 )

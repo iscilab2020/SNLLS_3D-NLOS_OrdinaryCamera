@@ -14,7 +14,7 @@ np.random.seed(seed)
 torch.manual_seed(seed)
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--M', type=int, default=128)
+    parser.add_argument('--M', type=int, default=32)
     parser.add_argument('--N', type=int, default=32)
     parser.add_argument("--num_points", type=int, default=10)
     parser.add_argument("--split_learning", type=int, default=0)
@@ -28,6 +28,9 @@ def main():
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     M=(args.M, args.M); N=(args.N, args.N)
+    
+    
+    print("Computing forward Model I(p) without Visibility Matrix")
 
     B = Pinspeck(camX_len=[0.808, 1.747], camZ_len=[0.05, 0.05+0.939], camDepth= 1.076, sceneDepth=0, scenePixels=N, 
                             camPixels=M, sceneX_len=[0, .708], sceneZ_len=[0.03, 0.436], occluders=None,
@@ -50,11 +53,12 @@ def main():
     
     cs = np.array([ 12, 13, 14, 15, 16, 17, 18, 19, 25, 35, 45, 56, 57, 58, 59, 55, 54,53,  52, 51 ])
 
-
+    print("Simulating the Measurement for a number of Pinspecks")
     mode = B.GetPinspeckModel(cs, pinhole=False, return_vis=0)
 
 
     m = awgn(B.GetMeasurement(x, Model=mode), args.snr).cpu()
+    
 
     fig = plt.figure(figsize=(15, 15))
     ax = fig.add_subplot(121, projection='3d')
@@ -64,9 +68,11 @@ def main():
 
 
     N_occluder = len(B.points)
+    print("Computing the Large Forward Model for all Pinspecks")
     Abar = B.GetABarModel(list(range(N_occluder)), return_vis=True, pinhole=False, return_pin=1)[0].reshape(-1, N_occluder, (N[0]*N[1]))
 
 
+    print("Estimating the 3D and 2D objects through AMA iterations")
     final_scene, final_occluder, loss_history, final_lambda_reg, final_bias = GradientDescentJointREcovery(B, m, 
                                                                                 Abar=Abar, n_iterations=args.max_iteration, split_learning=args.split_learning)
 

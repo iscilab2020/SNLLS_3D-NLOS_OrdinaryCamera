@@ -69,9 +69,6 @@ def main():
 
 
 
-    
-
-
     ax = fig.add_subplot(122, projection='3d')
     xx = torch.Tensor(xx)
     xx=torch.relu(xx[None]/xx.max())

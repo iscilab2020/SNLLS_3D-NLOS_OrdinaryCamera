@@ -44,7 +44,6 @@ def main():
 
     m = torch.Tensor(loadmat(args.path_to_measurment)["measurement"])
     
-    
     N_occluder = len(B.points)
     Abar = B.GetABarModel(list(range(N_occluder)), return_vis=True, pinhole=False, return_pin=1)[0].reshape(-1, N_occluder, (N[0]*N[1]))
     print("Completed Forward Model")
@@ -52,8 +51,6 @@ def main():
 
     final_scene, final_occluder, loss_history, final_lambda_reg, final_bias = GradientDescentJointREcovery(B, m, 
                                                                                 Abar=Abar, n_iterations=args.max_iteration, split_learning=args.split_learning)
-    
-    
 
 
     ss = torch.sigmoid(final_occluder)>0.5
@@ -68,6 +65,9 @@ def main():
     ax = fig.add_subplot(111, projection='3d')
     
     environment_fig(B, occ=ss, measurement=m, ax=ax, Title="Estimated Occluder and Scene", scene=final_scene, save_fig=args.path_to_save)
+    
+    
+    print("Creating Gif")
     
     filenames = []
     for angle in range(0, 360, 2):  # Adjust the step for a smoother or faster rotation

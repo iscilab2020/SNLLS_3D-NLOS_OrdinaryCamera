@@ -11,16 +11,17 @@
   <tr>
     <!-- Image -->
     <td>
-      <img src="SNLLS/data/real_setup.jpg" alt="Your Image Description" width="500"/>
+      <img src="SNLLS/data/real_setup.jpg" alt="Real Setup" width="500"/>
     </td>
     <!-- GIF -->
     <td>
-      <img src="SNLLS/results/real_results.gif" alt="Your GIF Description" width="500"/>
+      <img src="SNLLS/results/real_results.gif" alt="Real Result" width="500"/>
     </td>
   </tr>
 </table>
 
-
+Please Note that Line 5 in Algroithm 1 of the original paper should be 
+<img width="305" alt="image" src="https://github.com/iscilab2020/SNLLS_3D-NLOS_OrdinaryCamera/assets/58338603/650bd233-bb12-42e2-a067-9a55828076b0">
 
 ## Citing SNLLS_3D-NLOS
 If you use our codes or paper in your research, please cite this

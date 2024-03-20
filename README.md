@@ -27,7 +27,12 @@ Please Note that Line 5 in Algroithm 1 of the original paper should be
 If you use our codes or paper in your research, please cite this
 ```
 @InProceedings{Fadlullah_2024_ICASSP,
-author = {Fadlullah, Raji and John, Murray-Bruce},
+  author={Raji, Fadlullah and Murray-Bruce, John},
+  booktitle={ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+  title={Towards 3D Computational Persicopy with an Ordinary Camera: a Separable Non-Linear Least Squares Formulation}, 
+  year={2024},
+  pages={7475-7479},
+  doi={10.1109/ICASSP48485.2024.10446230}}
 }
 ```
 ## Getting Started
